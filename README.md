@@ -6,6 +6,7 @@
 ## Designer
 
 # Micah
+## Lead Programmer
 
 # Brithany
 ## Group Photoghrefer
