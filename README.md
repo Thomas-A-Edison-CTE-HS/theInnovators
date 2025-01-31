@@ -9,4 +9,4 @@
 ## Lead Programmer
 
 # Brithany
-## Group Photoghrefer
+## Group photographer
