@@ -7,7 +7,7 @@
 
 # Micah
 ## Lead Programmer
-** As the lead programmer, I would facilitate the coding within the app project, taking group input and executing it with code.
+** As the lead programmer, I would facilitate the coding within the app project, taking group input and executing it with code. **
 1. Future Uncertainty
 2. Mental Health
 3. Housing Inflation
