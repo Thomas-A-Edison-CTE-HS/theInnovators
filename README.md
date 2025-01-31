@@ -4,6 +4,10 @@
 ## I think I'm good at typing fast on the computer.
 # Aliyah 
 ## Designer
+***As the designer, I would be working hard to create appealing visuals to our app, which would draw people to use our app***
+1) Human Rights Violation
+2) Mental Health Awareness
+3) Finacial Aid for students
 
 # Micah
 ## Lead Programmer
