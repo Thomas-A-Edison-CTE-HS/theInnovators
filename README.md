@@ -2,6 +2,12 @@
 
 # Rafael Perez 
 ## I think I'm good at typing fast on the computer.
+**** As the designer, I would be working hard to create appealing visuals to your app, which would draw people to use our app ****
+
+1- Human Rights Violation
+2- Imigration
+3- Mental Health
+
 # Aliyah 
 ## Designer
 ***As the designer, I would be working hard to create appealing visuals to our app, which would draw people to use our app***
