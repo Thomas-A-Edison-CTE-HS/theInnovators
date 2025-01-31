@@ -9,7 +9,11 @@
 ## Lead Programmer
 
 # Brithany
-## Group photographer
+## Group Photographer
+### I would like to be the Group photographer. My job as the group photographer is totake picture of how we are creating our app (us and the app creation).
+### Imigration
+### Human right violation
+### Employment deficit
 
 ** bold **
 * Italic *
