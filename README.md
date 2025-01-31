@@ -1,1 +1,1 @@
-# theInnovators
+# The Innovators
