@@ -15,6 +15,7 @@
 ### Human right violation
 ### Employment deficit
 
+ # how to create the words bold or others
 ** bold **
 * Italic *
 *** bold and italic ***
