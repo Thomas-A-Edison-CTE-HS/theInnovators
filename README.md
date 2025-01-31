@@ -2,8 +2,6 @@
 
 # Rafael Perez 
 
-!kshjdf
-
 # Aliyah 
 
 # Micah
