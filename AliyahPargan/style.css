@@ -17,7 +17,7 @@ body{
   padding: 2px;
   border: 2px solid white;
   width:24.5%;
-  height: 1000px;
+  height: 900px;
   font-size: 0.8rem;
 }
 .right{
@@ -27,5 +27,5 @@ body{
   padding: 2px;
   border: 2px solid;
   width:74%;
-  height: 1360px;
+  height: 900px;
 }
