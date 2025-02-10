@@ -1,3 +1,6 @@
+body{
+	background-image: linear-gradient(to bottom right, mediumorchid,royalblue,cornflowerblue);
+}
 .container{
 	border:3px,black;
 	position: relative;
