@@ -1,1 +1,28 @@
-
+.container{
+	border:3px,black;
+	position: relative;
+	top: 2px;
+	margin: 15px;
+	padding: 10px;
+	height: 8000px;
+	overflow: hidden;
+}
+.left{
+   position: absolute;
+  left: 2px;
+  margin: 2px;
+  padding: 2px;
+  border: 2px solid white;
+  width:24.5%;
+  height: 1000px;
+  font-size: 0.8rem;
+}
+.right{
+    position: absolute;
+  right: 1px;
+  margin: 2px;
+  padding: 2px;
+  border: 2px solid;
+  width:74%;
+  height: 1360px;
+}
