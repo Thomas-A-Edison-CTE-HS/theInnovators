@@ -1,43 +1,4 @@
 <!DOCTYPE html>
-<!--
-<html>
-<head>
-<style>
-div.mycontainer {
-  width:auto;
-  overflow:auto;
-  height: auto;
-  border: black 1px;
-}
-div.mycontainer div {
-  width:33%;  
-  float:left;
-  height:100%;
-}
-p{
-	font-size: 1.25em;
-}
-</style>
-</head>
-<body>
-
-<div class="mycontainer" >
-
-  <div style="background-color:blanchedalmond;text-align:center;height:100%">
-    <h2  >Micah Kennedy</h2>
-    <img src="me.jpg" width=90% height=92%>
-  </div>
-  
-  <div style="background-color:antiquewhite;width:65%;height:100%">
-    <h2></h2>
-    <p>I attend Thomas A. Edison CTE High School and I'm enrolled in the Web Development CTE course. My skills include HTML, CSS, a liitle bit of Javascript, and an intermediate knowledge of python. </p>
-  </div>
-
-</div>
-
-</body>
-</html>
--->
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -49,15 +10,6 @@ p{
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
         <script src="https://code.jquery.com/jquery-3.2.0.slim.min.js"></script>
         <script>
-        $(function(){
-            $(".sneak").click(function(){
-                $(this).parent().toggleClass("big");
-            })
-        })
-        function submitForm() {
-        document.contact-form.submit();
-        document.contact-form.reset();
-        }
             
         </script>
         <style>
@@ -91,20 +43,6 @@ p{
         
 
         <main class="l-main">
-            <!--===== HOME =====-->
-            <section class="home bd-grid" id="home">
-                <div class="home__data">
-                    <h1 class="home__title">Welcome To<br>My <span class="home__title-color">Junior Portfolio</span><br><span class="typed" data-typed-items="Designer, Developer, Coder, Crocheter"></span></h1>
-                    <h1 style="font-size:2em">
-                      <a href="" class="typewrite" data-period="2000" data-type='[ "Coder", "Web Designer", "Web Developer", "Animator", "Crocheter", "Micah!" ]'>
-                        <span class="wrap"></span>
-                      </a>
-                    </h1>
-                    <!--<a href="#contact" class="button">Contact</a>-->
-                </div>
-
-        
-            </section>
 
             <!--===== ABOUT =====-->
             <section class="about section " id="about">
@@ -112,7 +50,7 @@ p{
 
                 <div class="about__container bd-grid">
                     <div class="about__img">
-                        <img src="me.jpg" alt="">
+                        <img src="me.jpg" alt=""><br>
 			<div class="home__data">
                     <h1 style="font-size:2em">
                       <a href="" class="typewrite" data-period="2000" data-type='[ "Coder", "Web Designer", "Web Developer", "Animator", "Crocheter", "Micah!" ]'>
@@ -120,7 +58,7 @@ p{
                       </a>
                     </h1>
                     <!--<a href="#contact" class="button">Contact</a>-->
-                </div>
+                </div><br>
 
 			    
                         <p class="about__text">I'm a Web Developer at Thomas A. Edison CTE High School.
@@ -191,12 +129,7 @@ p{
 
         
         </main>
-
-       
-
-
-        <!--===== SCROLL REVEAL =====-->
-        <script src="https://unpkg.com/scrollreveal"></script>
+        
 
         <!--===== MAIN JS =====-->
         <script src="main.js"></script>
