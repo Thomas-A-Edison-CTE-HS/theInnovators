@@ -1,6 +1,11 @@
 body{
 	background-image: linear-gradient(to bottom right, mediumorchid,royalblue,cornflowerblue);
 }
+h1{
+	color: white;
+	text-align:center;
+	text-decoration: underline;
+}
 .container{
 	border:3px,black;
 	position: relative;
