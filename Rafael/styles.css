@@ -1,1 +1,36 @@
-
+body{
+	background-image: linear-gradient(to bottom right, mediumorchid,royalblue,cornflowerblue);
+}
+h1{
+	color: white;
+	text-align:center;
+	text-decoration: underline;
+}
+.container{
+	border:3px,black;
+	position: relative;
+	top: 2px;
+	margin: 15px;
+	padding: 10px;
+	height: 8000px;
+	overflow: hidden;
+}
+.left{
+   position: absolute;
+  left: 2px;
+  margin: 2px;
+  padding: 2px;
+  border: 2px solid black;
+  width:24.5%;
+  height: 700px;
+  font-size: 0.8rem;
+}
+.right{
+    position: absolute;
+  right: 1px;
+  margin: 2px;
+  padding: 2px;
+  border: 2px solid;
+  width:74%;
+  height: 700px;
+}
