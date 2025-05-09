@@ -2,7 +2,7 @@ body{
 	background-image: linear-gradient(to bottom right, mediumorchid,royalblue,cornflowerblue);
 }
 h1{
-	color: white;
+	color: red;
 	text-align:center;
 	text-decoration: underline;
 }
