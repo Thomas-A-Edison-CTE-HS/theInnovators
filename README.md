@@ -1,6 +1,6 @@
 # The Innovators
 
-# Rafael Perez 
+# Rafael  
 ## I think I'm good at typing fast on the computer.
 **** As the designer, I would be working hard to create appealing visuals to your app, which would draw people to use our app ****
 
