@@ -1,36 +1,14 @@
-body{
-	background-image: linear-gradient(to bottom right, mediumorchid,royalblue,cornflowerblue);
+body {
+  background-color: blue; /* Fondo azul */
+  color: black;           /* Texto negro */
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
 }
-h1{
-	color: red;
-	text-align:center;
-	text-decoration: underline;
-}
-.container{
-	border:3px,black;
-	position: relative;
-	top: 2px;
-	margin: 15px;
-	padding: 10px;
-	height: 4000px;
-	overflow: hidden;
-}
-.left{
-   position: absolute;
-  left: 2px;
-  margin: 2px;
-  padding: 2px;
+
+img {
+  width: 200px;   /* Tamaño reducido de la imagen */
+  height: auto;
   border: 2px solid black;
-  width:24.5%;
-  height: 400px;
-  font-size: 0.8rem;
-}
-.right{
-    position: absolute;
-  right: 1px;
-  margin: 2px;
-  padding: 2px;
-  border: 2px solid;
-  width:74%;
-  height: 400px;
+  margin-top: 20px;
 }
