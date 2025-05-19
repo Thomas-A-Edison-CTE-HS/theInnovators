@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FutureForge - Empowering Students to Forge Their Future</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4968EC;
+      --primary-light: #6F8AFF;
+      --secondary: #FF7A59;
+      --accent: #35D0BA;
+      --light-bg: #E9F3FF;
+      --dark-text: #1E293B;
+      --light-text: #FFFFFF;
+      --orange-accent: #FF9F59;
+      --purple-accent: #9F75FF;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--light-bg);
+      color: var(--dark-text);
+      overflow-x: hidden;
+    }
+
+    /* Blob animations */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.4;
+      z-index: -1;
+      animation: float 15s ease-in-out infinite;
+    }
+
+    .blob-1 {
+      width: 300px;
+      height: 300px;
+      background-color: var(--primary-light);
+      top: -100px;
+      left: -100px;
+      animation-delay: 0s;
+    }
+
+    .blob-2 {
+      width: 350px;
+      height: 350px;
+      background-color: var(--secondary);
+      top: 30%;
+      right: -100px;
+      animation-delay: 2s;
+    }
+
+    .blob-3 {
+      width: 250px;
+      height: 250px;
+      background-color: var(--accent);
+      bottom: 10%;
+      left: 5%;
+      animation-delay: 4s;
+    }
+
+    .blob-4 {
+      width: 200px;
+      height: 200px;
+      background-color: var(--purple-accent);
+      top: 40%;
+      left: 20%;
+      animation-delay: 6s;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+      50% {
+        transform: translate(30px, 20px) scale(1.05);
+      }
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+    }
+
+    /* Navigation */
+    nav {
+      background-color: var(--primary);
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+    }
+
+    nav.scrolled {
+      padding: 0.7rem 2rem;
+      background-color: rgba(73, 104, 236, 0.95);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--light-text);
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .logo img {
+      width: 40px;
+      height: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--light-text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--light-text);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover:after {
+      width: 100%;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--light-text);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 8rem 2rem 5rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(45deg, var(--primary), var(--purple-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: var(--dark-text);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--light-text);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-primary:hover {
+      background-color: transparent;
+      color: var(--primary);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--primary);
+      color: var(--light-text);
+    }
+
+    .hero-image {
+      margin-top: 3rem;
+      max-width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      transition: var(--transition);
+    }
+
+    /* About Section */
+    .section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 3px;
+      background-color: var(--primary);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-image {
+      flex: 1;
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: var(--transition);
+    }
+
+    .about-text p {
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    /* Features Section */
+    .features {
+      background-color: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .features-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .feature-card {
+      background-color: #ffffff;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-card:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(45deg, var(--primary), var(--purple-accent));
+      top: 0;
+      left: 0;
+    }
+
+    .feature-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-card:nth-child(1) .feature-icon {
+      background-color: rgba(73, 104, 236, 0.15);
+      color: var(--primary);
+    }
+
+    .feature-card:nth-child(2) .feature-icon {
+      background-color: rgba(255, 122, 89, 0.15);
+      color: var(--secondary);
+    }
+
+    .feature-card:nth-child(3) .feature-icon {
+      background-color: rgba(53, 208, 186, 0.15);
+      color: var(--accent);
+    }
+
+    .feature-card:nth-child(4) .feature-icon {
+      background-color: rgba(159, 117, 255, 0.15);
+      color: var(--purple-accent);
+    }
+
+    .feature-card:nth-child(5) .feature-icon {
+      background-color: rgba(255, 159, 89, 0.15);
+      color: var(--orange-accent);
+    }
+
+    .feature-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Gallery Section */
+    .gallery {
+      position: relative;
+    }
+
+    .slideshow-container {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .mySlides {
+      display: none;
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .mySlides.fade {
+      animation: fade 1.5s;
+    }
+
+    .mySlides img {
+      width: 100%;
+      height: auto;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--primary);
+      color: var(--light-text);
+      font-weight: bold;
+      font-size: 1.5rem;
+      transition: var(--transition);
+      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .prev {
+      left: -25px;
+    }
+
+    .next {
+      right: -25px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: var(--primary-light);
+    }
+
+    .dots-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .active-dot, .dot:hover {
+      background-color: var(--primary);
+    }
+
+    @keyframes fade {
+      from {opacity: 0.4}
+      to {opacity: 1}
+    }
+
+    /* Team Section */
+    .team {
+      background-color: #ffffff;
+    }
+
+    .team-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .team-member {
+      background-color: var(--light-bg);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .team-member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .member-image {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .member-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .team-member:hover .member-image img {
+      transform: scale(1.05);
+    }
+
+    .member-info {
+      padding: 1.5rem;
+    }
+
+    .member-name {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .member-role {
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .member-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .member-links a {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      color: var(--light-text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .member-links a:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-3px);
+    }
+
+    /* CTA Section */
+    .cta {
+      background: linear-gradient(135deg, var(--primary), var(--purple-accent));
+      color: var(--light-text);
+      text-align: center;
+      padding: 5rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-title {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-text {
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .cta .btn-secondary {
+      border-color: var(--light-text);
+      color: var(--light-text);
+    }
+
+    .cta .btn-secondary:hover {
+      background-color: var(--light-text);
+      color: var(--primary);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark-text);
+      color: var(--light-text);
+      padding: 3rem 2rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .footer-logo img {
+      width: 30px;
+      height: auto;
+    }
+
+    .footer-col h4 {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .footer-col h4:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 40px;
+      height: 2px;
+      background-color: var(--primary);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-links a {
+      color: #aaaaaa;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--light-text);
+      padding-left: 5px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--light-text);
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background-color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      margin-top: 3rem;
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .about-content {
+        flex-direction: column-reverse;
+      }
+
+      .prev, .next {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background-color: var(--primary);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: var(--transition);
+        z-index: 999;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+        z-index: 1000;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .prev {
+        left: 10px;
+      }
+
+      .next {
+        right: 10px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-buttons {
+        flex-direction: column;
+      }
+    }
+
+    /* Animations */
+    .reveal {
+      position: relative;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal.delay-1 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal.delay-2 {
+      transition-delay: 0.4s;
+    }
+
+    .reveal.delay-3 {
+      transition-delay: 0.6s;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <img src="figure.png">
+        FutureForge
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#gallery">Mockup</a></li>
+        <li><a href="#team">Team</a></li>
+      </ul>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-image reveal">
+      <img src="showcase.png" alt="FutureForge App Showcase">
+    </div>
+    <div class="hero-content">
+      <h1 class="reveal">FutureForge</h1>
+      <p class="reveal delay-1"><em>"Empowering Students to Forge Their Future"</em></p>
+      <p class="reveal delay-2">
+        Navigating life after high school doesn't have to be overwhelming. 
+        FutureForge provides personalized guidance, mentorship, and accessible resources 
+        to help teens confidently plan their future paths.
+      </p>
+      <div class="hero-buttons reveal delay-3">
+        <a href="#features" class="btn btn-primary">
+          <i class="fas fa-rocket"></i> Explore Features
+        </a>
+        <a href="#gallery" class="btn btn-secondary">
+          <i class="fas fa-images"></i> View Mockup
+        </a>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- About Section -->
+  <section class="section about" id="about">
+    <div class="section-header">
+      <h2 class="section-title reveal">About FutureForge</h2>
+    </div>
+    <div class="about-content">
+      <div class="about-text">
+        <p class="reveal">
+          FutureForge empowers teens, parents, and counselors to confidently navigate post-secondary pathways 
+          with personalized guidance, mentorship, and accessible resources—all in one engaging app.
+        </p>
+        <p class="reveal delay-1">
+          We built FutureForge to address the widespread anxiety and uncertainty teens face when planning 
+          life after high school, especially those lacking access to resources and mentorship. 
+          Existing tools are often limited to school systems, leaving many students unsupported.
+        </p>
+        <p class="reveal delay-2">
+          Our research showed strong demand for a comprehensive, easy-to-use app that combines career exploration, 
+          financial aid, and wellness in one place. By including parents and counselors, we strengthen the support 
+          network for students. Ultimately, FutureForge aims to level the playing field and help every young person 
+          build a confident, informed future.
+        </p>
+      </div>
+      <div class="about-image reveal delay-3">
+        <img src="/api/placeholder/600/400" alt="FutureForge Design Theme">
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section features" id="features">
+    <div class="section-header">
+      <h2 class="section-title reveal">Key Features</h2>
+    </div>
+    <div class="features-container">
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <i class="fas fa-compass"></i>
+        </div>
+        <h3 class="feature-title">Career Explorer</h3>
+        <p>
+          Discover career paths aligned with your interests, strengths, and goals. 
+          Explore detailed information about educational requirements, salary expectations, 
+          and job growth forecasts.
+        </p>
+      </div>
+
+      <div class="feature-card reveal delay-1">
+        <div class="feature-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3 class="feature-title">Mentor Connect</h3>
+        <p>
+          Connect with experienced professionals and educators who can provide guidance 
+          and insights on your chosen path. Schedule virtual meetings and get personalized advice.
+        </p>
+      </div>
+
+      <div class="feature-card reveal delay-2">
+        <div class="feature-icon">
+          <i class="fas fa-search-dollar"></i>
+        </div>
+        <h3 class="feature-title">Smart Aid Finder</h3>
+        <p>
+          Navigate financial aid options with personalized recommendations for scholarships, 
+          grants, and other funding opportunities based on your profile and preferences.
+        </p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h3 class="feature-title">Skill Builders</h3>
+        <p>
+          Develop essential skills through interactive modules and resources designed 
+          to prepare you for college, career, and life success. Track your progress and 
+          earn achievement badges.
+        </p>
+      </div>
+
+      <div class="feature-card reveal delay-1">
+        <div class="feature-icon">
+          <i class="fas fa-heart"></i>
+        </div>
+        <h3 class="feature-title">Mindfulness & Wellness</h3>
+        <p>
+          Manage stress and maintain well-being with guided mindfulness practices, 
+          emotion tracking, and wellness resources designed for busy students navigating 
+          important life decisions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section gallery" id="gallery">
+    <div class="section-header">
+      <h2 class="section-title reveal">App Gallery</h2>
+    </div>
+    <div class="slideshow-container reveal">
+      <div class="mySlides fade">
+        <img src="/api/placeholder/800/500" alt="FutureForge Sign Up Screen">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="/api/placeholder/800/500" alt="FutureForge Menu Screen">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="/api/placeholder/800/500" alt="FutureForge Upcoming Opportunities">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="/api/placeholder/800/500" alt="FutureForge Wellness Dashboard">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="/api/placeholder/800/500" alt="FutureForge Mindfulness Screen">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="/api/placeholder/800/500" alt="FutureForge Mentor Connect">
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <div class="dots-container">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+      <span class="dot" onclick="currentSlide(6)"></span>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="section team" id="team">
+    <div class="section-header">
+      <h2 class="section-title reveal">Our Team</h2>
+    </div>
+    <div class="team-container">
+      <div class="team-member reveal">
+        <a href="Aliyah/index.html" class="member-link">
+          <div class="member-image">
+            <img src="/api/placeholder/400/400" alt="Aliyah Pargan">
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">Aliyah Pargan</h3>
+            <p class="member-role">UI/UX Design Lead</p>
+            <p>Passionate about creating inclusive digital experiences that empower users.</p>
+            <div class="member-links">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="team-member reveal delay-1">
+        <a href="Rafael/index.html" class="member-link">
+          <div class="member-image">
+            <img src="/api/placeholder/400/400" alt="Rafael Lopez">
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">Rafael Lopez</h3>
+            <p class="member-role">Backend Developer</p>
+            <p>Skilled in creating robust systems that make complex functionality feel simple.</p>
+            <div class="member-links">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="team-member reveal delay-2">
+        <a href="MicahKennedy/index.html" class="member-link">
+          <div class="member-image">
+            <img src="/api/placeholder/400/400" alt="Micah Kennedy">
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">Micah Kennedy</h3>
+            <p class="member-role">Product Manager</p>
+            <p>Focuses on understanding user needs and translating them into meaningful features.</p>
+            <div class="member-links">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="team-member reveal delay-3">
+        <a href="#" class="member-link">
+          <div class="member-image">
+            <img src="/api/placeholder/400/400" alt="Emily Johnson">
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">Emily Johnson</h3>
+            <p class="member-role">Content Strategist</p>
+            <p>Creates engaging content that helps students navigate their future with confidence.</p>
+            <div class="member-links">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta" id="contact">
+    <div class="cta-content">
+      <h2 class="cta-title reveal">Ready to Shape Your Future?</h2>
+      <p class="cta-text reveal delay-1">
+        Join thousands of students who are already using FutureForge to navigate their path to success.
+      </p>
+      <div class="hero-buttons reveal delay-2">
+        <a href="#" class="btn btn-secondary">Get Started Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact" id="contact">
+    <div class="section-header">
+      <h2 class="section-title reveal">Get in Touch</h2>
+    </div>
+    <div class="contact-form reveal delay-1">
+      <form id="contactForm">
+        <div class="form-group">
+          <input type="text" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <textarea placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <i class="fas fa-book"></i>
+          <span>FutureForge</span>
+        </div>
+        <p>Empowering students to forge their future with confidence and purpose.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#team">Team</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <ul class="footer-links">
+          <li><i class="fas fa-envelope"></i> info@futureforge.com</li>
+          <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+          <li><i class="fas fa-map-marker-alt"></i> 123 Innovation Drive</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 FutureForge. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+
+    // Slideshow functionality
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      const slides = document.getElementsByClassName("mySlides");
+      const dots = document.getElementsByClassName("dot");
+
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active-dot");
+      }
+
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].classList.add("active-dot");
+    }
+
+    // Reveal animations
+    function reveal() {
+      const reveals = document.querySelectorAll(".reveal");
+      reveals.forEach(element => {
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+
+        if (elementTop < windowHeight - elementVisible) {
+          element.classList.add("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", reveal);
+    reveal();
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
